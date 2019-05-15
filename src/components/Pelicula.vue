@@ -5,7 +5,7 @@
           <img  :src="imageUrl + this.movie.poster_path" style="float:left;" alt="Card image cap">
           </div>
           <div>
-            <div style="height:630px; text-align:center;" >
+            <div style="height:650px; text-align:center;" >
               <h5 class="card-title">{{this.movie.title}}</h5>
               <p class="card-text">{{this.movie.tagline}}</p>
               <p class="card-text">{{this.movie.overview}}</p>

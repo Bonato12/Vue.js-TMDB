@@ -29,7 +29,7 @@
                <img class="card-img-top" :src="imageUrl + item.poster_path" style="width:17rem; height:25rem;" alt="Card image cap">
                <ul>
                    <div class="link">
-                     <router-link :to="/pelicula/+item.id"  class="btn" tag="" style="background-color:#01d277; width:30px;"></router-link>
+                     <router-link :to="/pelicula/+item.id"  class="btn" tag="btn" style="background-color:#01d277; width:30px;"></router-link>
                    </div>
                </ul>
             </div>
@@ -138,7 +138,7 @@ top: -07px;
 }
 
 .card-img-top: hover{
-  
+
 
 }
 

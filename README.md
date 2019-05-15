@@ -1,22 +1,14 @@
 # The Movie Data Base
 
-> Projecto de Vue Js con Json
+Capturas
 
-## Build Setup
+Home
+![alt text](https://github.com/Bonato12/stack-PEVN/blob/master/client/assets/login.png)
 
+![alt text](https://github.com/Bonato12/stack-PEVN/blob/master/client/assets/homecliente.png)
 
-# install dependencies
-npm install
+Busqueda
+![alt text](https://github.com/Bonato12/stack-PEVN/blob/master/client/assets/formulario.png)
 
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-## 
-Vue Js
-Bootstrap-vue
-AJax con Vue Resources
-
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+Detalle Pelicula
+![alt text](https://github.com/Bonato12/stack-PEVN/blob/master/client/assets/sweetalert.png)
