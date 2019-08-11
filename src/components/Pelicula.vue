@@ -1,5 +1,5 @@
 <template>
-  <div style="background-color: #01d277;">
+  <div class="fondo">
       <div style="padding:80px;">
           <div>
           <img  :src="imageUrl + this.movie.poster_path" style="float:left;" alt="Card image cap">
@@ -7,9 +7,11 @@
           <div>
             <div style="height:650px; text-align:center;" >
               <h5 class="card-title">{{this.movie.title}}</h5>
-              <p class="card-text">{{this.movie.tagline}}</p>
-              <p class="card-text">{{this.movie.overview}}</p>
-              <p class="card-text"><small class="text-muted"></small></p>
+              <b-progress style="margin-left:445px; width:640px;" :value="5" :max="this.movie.vote_average" :precision="2" show-progress class="mb-1"></b-progress>
+              <div>
+                <p class="card-text">{{this.movie.overview}}</p>
+              </div>
+              <br>
               <youtube :video-id="urlId" ref="youtube" @playing="playing"></youtube>
             </div>
           </div>
@@ -68,7 +70,7 @@
 	}
 </script>
 
-<style>
+<style scoped>
 
 .lista {
   top: -65px;
@@ -100,6 +102,13 @@ background-color: rgb(8, 28, 36);
 
 .principal{
 background-color: #01d277;
+}
+
+.fondo{
+  background-color: #01d277;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 .voto{

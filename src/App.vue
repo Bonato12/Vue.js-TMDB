@@ -23,8 +23,8 @@
 
 	export default {
 		name: "app",
-  		 created: function() {
-         $router.go('/home');
+  		 created() {
+        this.$router.push('/home');
 
   		},
   		data () {
@@ -35,7 +35,7 @@
 
   		methods: {
 
-            }
+      }
 		}
 </script>
 

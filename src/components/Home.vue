@@ -10,9 +10,6 @@
              <img class="logo" src="src/assets/popcorn.png">
          </b-navbar-brand>
          <b-collapse is-nav id="nav_collapse">
-             <select  class="col-sm-2 form-control form-control-lg" v-model="selected" v-on:click="getMovies" >
-                 <option v-for="g in genres" v-bind:value="g.value" v-on:click="getMovies" >{{g.name}} </option>
-             </select>
              <b-navbar-nav class="ml-auto">
                  <b-nav-form>
                      <b-form-input size="sm" class="col-sm-8 form-control form-control-lg" type="text" placeholder="Buscar" id="Buscar1"/>
@@ -26,12 +23,7 @@
 	    <div>
         <li v-for="item in movies" class="lista" >
             <div style="width:17rem;">
-               <img class="card-img-top" :src="imageUrl + item.poster_path" style="width:17rem; height:25rem;" alt="Card image cap">
-               <ul>
-                   <div class="link">
-                     <router-link :to="/pelicula/+item.id"  class="btn" tag="btn" style="background-color:#01d277; width:30px;"></router-link>
-                   </div>
-               </ul>
+               <img class="card-img-top" @click="getIdMovies(item.id)" :src="imageUrl + item.poster_path" style="width:17rem; height:25rem;" alt="Card image cap">
             </div>
         </li>
       </div>
@@ -102,6 +94,10 @@
                      this.movies = response.data.results;
                 });
           },
+          getIdMovies(id){
+              console.log(id);
+              this.$router.push('/pelicula/'+id)
+          }
 
 		}
 	}
