@@ -1,6 +1,19 @@
 <template>
   <div>
-
+    <b-navbar class="navbar" toggleable="md" type="dark" >
+         <b-navbar-brand href="#">
+            <div class="brand-name-wrapper">
+               <img class="logo" src="src/assets/logo.jpg">
+             </div>
+         </b-navbar-brand>
+         <b-navbar-brand >
+             <img class="logo" src="src/assets/popcorn.png">
+         </b-navbar-brand>
+         <b-collapse is-nav id="nav_collapse">
+             <b-navbar-nav class="ml-auto">
+            </b-navbar-nav>
+         </b-collapse>
+      </b-navbar>
       <router-view></router-view>
 
       <footer class="pie" >
@@ -70,7 +83,7 @@ background-color: rgb(8, 28, 36);
 }
 
 .principal{
-background-color: #01d277;
+background-color: #81c7db;
 }
 
 .voto{

@@ -49,13 +49,13 @@
 
 		methods: {
         getMovie(){
-                axios.get('https://api.themoviedb.org/3/movie/'+this.id+'?api_key=1b62ccff88d2cd537027e1d82920197b').then((response)=>{
+                axios.get('https://api.themoviedb.org/3/movie/'+this.id+'?api_key=b80639b9f5a2e4e880b931dedbec575b').then((response)=>{
                      this.movie = response.data;
                      console.log(this.movie);
                 });
           },
           verTrailer(){
-            axios.get('http://api.themoviedb.org/3/movie/'+this.id+'/videos?api_key=1b62ccff88d2cd537027e1d82920197b').then((response)=>{
+            axios.get('http://api.themoviedb.org/3/movie/'+this.id+'/videos?api_key=b80639b9f5a2e4e880b931dedbec575b').then((response)=>{
                  this.urlId = response.data.results[0].key;
                  console.log(this.urlId);
 

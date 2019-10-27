@@ -1,29 +1,10 @@
 <template>
   <div id="app" class="principal">
-      <b-navbar class="navbar" toggleable="md" type="dark" >
-         <b-navbar-brand href="#">
-            <div class="brand-name-wrapper">
-               <img class="logo" src="src/assets/logo.jpg">
-             </div>
-         </b-navbar-brand>
-         <b-navbar-brand v-on:click="getCine">
-             <img class="logo" src="src/assets/popcorn.png">
-         </b-navbar-brand>
-         <b-collapse is-nav id="nav_collapse">
-             <b-navbar-nav class="ml-auto">
-                 <b-nav-form>
-                     <b-form-input size="sm" class="col-sm-8 form-control form-control-lg" type="text" placeholder="Buscar" id="Buscar1"/>
-                     <b-navbar-brand role="button" v-on:click="getBuscar">
-                         <img class="logo" src="src/assets/search.png">
-                     </b-navbar-brand>
-                 </b-nav-form>
-            </b-navbar-nav>
-         </b-collapse>
-      </b-navbar>
 	    <div>
         <li v-for="item in movies" class="lista" >
-            <div style="width:17rem;">
-               <img class="card-img-top" @click="getIdMovies(item.id)" :src="imageUrl + item.poster_path" style="width:17rem; height:25rem;" alt="Card image cap">
+            
+            <div style="height:400px">
+               <img class="card-img-top" @click="getIdMovies(item.id)" :src="imageUrl + item.poster_path" style="width:15rem; height:25rem;" alt="Card image cap">
             </div>
         </li>
       </div>
@@ -75,13 +56,13 @@
         getMovies(){
           console.log(this.selected);
           var genero = this.selected;
-                this.axios.get('https://api.themoviedb.org/3/discover/movie?api_key=1b62ccff88d2cd537027e1d82920197b&with_genres='+genero+'&sort_by=vote_average.desc&vote_count.gte=10').then((response)=>{
+                this.axios.get('https://api.themoviedb.org/3/discover/movie?api_key=b80639b9f5a2e4e880b931dedbec575b&with_genres='+genero+'&sort_by=vote_average.desc&vote_count.gte=10').then((response)=>{
                      this.movies = response.data.results;
                      console.log(this.movies);
                 });
           },
         getCine(){
-                 axios.get('https://api.themoviedb.org/3/discover/movie?api_key=1b62ccff88d2cd537027e1d82920197b&primary_release_date.gte=2018-05-15&primary_release_date.lte=2018-7-28').then((response)=>{
+                 axios.get('https://api.themoviedb.org/3/discover/movie?api_key=b80639b9f5a2e4e880b931dedbec575b&sort_by=popularity.desc').then((response)=>{
                      this.movies = response.data.results;
                      console.log(this.movies);
 
@@ -89,7 +70,7 @@
           },
         getBuscar (){
           var pelicula = document.getElementById("Buscar1").value;
-                axios.get('https://api.themoviedb.org/3/search/movie?include_adult=false&page=1&api_key=1b62ccff88d2cd537027e1d82920197b&query='+pelicula+'&language=en-US'+
+                axios.get('https://api.themoviedb.org/3/search/movie?include_adult=false&page=1&api_key=b80639b9f5a2e4e880b931dedbec575b&query='+pelicula+'&language=en-US'+
                     '').then((response)=>{
                      this.movies = response.data.results;
                 });
@@ -111,7 +92,7 @@
   display: inline-block;
   margin: 26px;
   width: 13rem;
-  height:21rem;
+  height:23rem;
   text-align: center;
 }
 
@@ -133,8 +114,8 @@ top: -07px;
   display: none;
 }
 
-.card-img-top: hover{
-
+.card-img-top:hover{
+  opacity: 0.5;
 
 }
 
