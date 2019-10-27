@@ -37,7 +37,7 @@
 	export default {
 		name: "app",
   		 created() {
-        this.$router.push('/home');
+        this.$router.replace('/home');
 
   		},
   		data () {

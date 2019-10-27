@@ -2,7 +2,6 @@
   <div id="app" class="principal">
 	    <div>
         <li v-for="item in movies" class="lista" >
-            
             <div style="height:400px">
                <img class="card-img-top" @click="getIdMovies(item.id)" :src="imageUrl + item.poster_path" style="width:15rem; height:25rem;" alt="Card image cap">
             </div>
